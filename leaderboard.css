@@ -1,0 +1,118 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    padding: 0;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#banner{
+    height:70px;
+}
+
+#signup-link{
+    display:none;
+}
+
+
+#banner img{
+    height:80px;
+}
+#login-buttons{
+    position: relative;
+    left: 500px;
+}
+
+#deleteAllBtn{
+    position: relative;
+    left: 100px;
+}
+
+.title{
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    position: relative;
+    top: 10px;
+}
+
+#outer {
+    width: 1024px;
+    margin: 0 auto;    
+}
+
+#registrationBoard{
+    width: 600px;
+    float: left;
+    clear: left;
+    margin-right: 20px;
+}
+
+.result{
+    padding-left: 10px;
+}
+
+#leaderBoards{
+    overflow: hidden;
+    float:left;
+}
+
+.leaderboard{
+    width: 300px;
+}
+.leaderboard :first-child, .leaderboard :nth-child(2){
+    font-size: 20px;
+}
+
+.player {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.player .name {
+    display: inline-block;
+    width: 300px;
+    font-size: 1.75em;
+}
+
+#newPlayerName{
+    width: 200px;
+}
+.newPlayer{
+    position: relative;
+    top: 36px;
+    left: 5px;
+}
+
+.player .score {
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+    font-size: 2em;
+    font-weight: bold;
+    color: #777;
+}
+
+.selected {
+    background-color: rgb(184, 229, 255);
+}
+
+.player.selected .score {
+    color: black;
+}
+
+
+.inc {
+  cursor: pointer;
+}
+
+.error{
+    border-color: #b94a48;
+}
+
+h3 i{
+    margin-right:10px;
+}

@@ -1,0 +1,120 @@
+<head>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <title>CX Pil</title>
+</head>
+
+<body>
+  <div id="banner">
+      <img src="dart.png"/>
+      <span class="title">CX Dart</span>
+      {{> deleteAll}}
+      <span class="login">{{loginButtons}}</span>
+  </div>
+  <div id="outer">
+    {{#if currentUser}}
+	     {{> newPlayer}}
+    {{/if}}
+    	 {{> leaderboard}}
+       <div id="leaderBoards">
+           {{> leaderboardMax}}
+           {{> leaderboardMin}}
+           {{> leaderboardCloseTofifty}}
+       </div>
+  </div>
+</body>
+
+<template name="deleteAll">
+  {{#if currentUser}}
+  <button type="button" class="btn btn-primary" id="deleteAllBtn"><i class="icon-play-sign"></i> Nytt Spill </button>
+  {{/if}}
+</template>
+
+<template name="newPlayer">
+  <div class="newPlayer">
+   	<input id="newPlayerName" class="form-control pull-left" placeholder="Deltager" type="Text"/>
+	  <button type="button" class="btn pull-left btn-primary" id="newPlayerBtn" value=""><i class="icon-user"></i> Legg til</button>
+  </div>
+</template>
+
+<template name="leaderboard">
+  <div id="registrationBoard" class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Deltagere</h3>
+    </div>
+    {{#each players}}
+      {{> player}}
+    {{/each}}
+  </div>
+</template>
+
+
+
+<template name="leaderboardMax">
+   <div class="leaderboard panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title"><i class="icon-trophy"></i>Top skor</h3>
+    </div>
+    <table class="table table-condensed">
+    {{#each playersMax}}
+      {{> playerMax}}
+    {{/each}}
+    </table>
+  </div>
+</template>
+
+<template name="leaderboardMin">
+  <div class="leaderboard panel panel-primary">
+    <div class="panel-heading">
+    <h3 class="panel-title"><i class="icon-glass"></i>Lavest skor</h3>
+  </div>
+    <table class="table table-condensed">
+    {{#each playersMin}} 
+      {{> playerMin}}
+    {{/each}}
+    </table>
+  </div>
+</template>
+
+<template name="leaderboardCloseTofifty">
+ <div class="leaderboard panel panel-primary">
+    <div class="panel-heading">
+    <h3 class="panel-title"><i class="icon-bullseye"></i>Nermest 50</h3>
+  </div>
+    <table class="table table-condensed">
+      {{#each playersFifty}}
+        {{> playerFifty}}
+      {{/each}}
+    </table>
+  </div>
+</template>
+
+
+
+<template name="player">
+  <div class="player {{selected}}">
+    <span class="name">{{name}}</span>
+    {{#if currentUser}}
+      <input type="number" id="score1" class="score" value={{score1}}></input>
+      <input type="number" id="score2" class="score" value={{score2}}></input>
+      <input type="number" id="score3" class="score" value={{score3}}></input>
+      <button type="button" class="btn pull-right btn-danger" id="deletePlayerBtn"><i class="icon-remove"></i> </button>
+    {{else}}
+    	<div class="score">{{score1}}</div>
+    	<div class="score">{{score2}}</div>
+    	<div class="score">{{score3}}</div>
+    {{/if}}
+  </div>
+</template>
+
+<template name="playerMax">
+    <tr><td class="name {{selected}}">{{name}}</td><td class="result {{selected}}">{{maxScore}}</td><tr/>
+</template>
+
+<template name="playerMin">
+    <tr><td class="name {{selected}}">{{name}}</td><td class="result {{selected}}">{{minScore}}</td><tr/>
+</template>
+
+<template name="playerFifty">
+    <tr><td class="name {{selected}}">{{name}}</td><td class="result {{selected}}">{{closeTofifty}}</td><tr/>
+</template>
+
