@@ -52,7 +52,7 @@
 <template name="leaderboardMax">
    <div class="leaderboard panel panel-primary">
     <div class="panel-heading">
-      <h3 class="panel-title"><i class="icon-trophy"></i>Top skor</h3>
+      <h3 class="panel-title"><i class="icon-trophy"></i>Høyeste poengsum</h3>
     </div>
     <table class="table table-condensed">
     {{#each playersMax}}
@@ -65,7 +65,7 @@
 <template name="leaderboardMin">
   <div class="leaderboard panel panel-primary">
     <div class="panel-heading">
-    <h3 class="panel-title"><i class="icon-glass"></i>Lavest skor</h3>
+    <h3 class="panel-title"><i class="icon-glass"></i>Laveste poengsum</h3>
   </div>
     <table class="table table-condensed">
     {{#each playersMin}} 
@@ -78,7 +78,7 @@
 <template name="leaderboardCloseTofifty">
  <div class="leaderboard panel panel-primary">
     <div class="panel-heading">
-    <h3 class="panel-title"><i class="icon-bullseye"></i>Nermest 50</h3>
+    <h3 class="panel-title"><i class="icon-bullseye"></i>Nærmest 50 (diff)</h3>
   </div>
     <table class="table table-condensed">
       {{#each playersFifty}}
