@@ -2,6 +2,7 @@
 // it is backed by a MongoDB collection named "players".
 
 Players = new Meteor.Collection("players");
+Stats = new Meteor.Collection("mystats");
 
 if (Meteor.isClient) {
 
