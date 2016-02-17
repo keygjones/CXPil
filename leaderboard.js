@@ -77,14 +77,22 @@ if (Meteor.isClient) {
 
   Template.playerMax.selected = function () {
     return Session.equals("selected_player", this._id) ? "selected" : '';
+    var msg = new SpeechSynthesisUtterance('MAX for the win. Have some wine.');
+    window.speechSynthesis.speak(msg);
+
   };
 
   Template.playerMin.selected = function () {
     return Session.equals("selected_player", this._id) ? "selected" : '';
+      var msg = new SpeechSynthesisUtterance('Oh no that is so low.');
+      window.speechSynthesis.speak(msg);
   };
 
   Template.playerFifty.selected = function () {
     return Session.equals("selected_player", this._id) ? "selected" : '';
+        var msg = new SpeechSynthesisUtterance('Close to the best round number! Fair and square.');
+        window.speechSynthesis.speak(msg);
+
   };
 
 
