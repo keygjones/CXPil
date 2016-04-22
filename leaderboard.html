@@ -11,9 +11,8 @@
       <span class="login">{{loginButtons}}</span>
   </div>
   <div id="outer">
-    {{#if currentUser}}
+
 	     {{> newPlayer}}
-    {{/if}}
     	 {{> leaderboard}}
        <div id="leaderBoards">
            {{> leaderboardMax}}
@@ -24,9 +23,7 @@
 </body>
 
 <template name="deleteAll">
-  {{#if currentUser}}
   <button type="button" class="btn btn-primary" id="deleteAllBtn"><i class="icon-play-sign"></i> Nytt Spill </button>
-  {{/if}}
 </template>
 
 <template name="newPlayer">
@@ -93,29 +90,23 @@
 <template name="player">
   <div class="player {{selected}}">
     <span class="name">{{name}}</span>
-    {{#if currentUser}}
-      <input type="number" id="score1" class="score" value={{score1}}></input>
-      <input type="number" id="score2" class="score" value={{score2}}></input>
-      <input type="number" id="score3" class="score" value={{score3}}></input>
+      <input type="number" id="score1" class="score" value={{score1}}>
+      <input type="number" id="score2" class="score" value={{score2}}>
+      <input type="number" id="score3" class="score" value={{score3}}>
       <button type="button" class="btn pull-right btn-danger" id="deletePlayerBtn"><i class="icon-remove"></i> </button>
-    {{else}}
-    	<div class="score">{{score1}}</div>
-    	<div class="score">{{score2}}</div>
-    	<div class="score">{{score3}}</div>
-    {{/if}}
   </div>
 </template>
 
 <template name="playerMax">
-    <tr><td class="name {{selected}}">{{name}}</td><td class="result {{selected}}">{{maxScore}}</td><tr/>
+    <tr><td class="name {{selected}}">{{name}}</td><td class="result {{selected}}">{{maxScore}}</td></tr>
 </template>
 
 <template name="playerMin">
-    <tr><td class="name {{selected}}">{{name}}</td><td class="result {{selected}}">{{minScore}}</td><tr/>
+    <tr><td class="name {{selected}}">{{name}}</td><td class="result {{selected}}">{{minScore}}</td></tr>
 </template>
 
 <template name="playerFifty">
-    <tr><td class="name {{selected}}">{{name}}</td><td class="result {{selected}}">{{closeTofifty}}</td><tr/>
+    <tr><td class="name {{selected}}">{{name}}</td><td class="result {{selected}}">{{closeTofifty}}</td></tr>
 </template>
 
 
